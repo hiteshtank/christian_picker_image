@@ -107,21 +107,21 @@ class ImagePickerAdapter(
         this.images.addAll(images)
     }
 
-    private fun addSelected(image: Image, position: Int) {
+    private fun addSelected(image: Image, position: Int): Unit {
         mutateSelection {
             selectedImages.add(image)
             notifyItemChanged(position)
         }
     }
 
-    private fun removeSelectedImage(image: Image, position: Int) {
+    private fun removeSelectedImage(image: Image, position: Int): Unit {
         mutateSelection {
             selectedImages.remove(image)
             notifyItemChanged(position)
         }
     }
 
-    fun removeAllSelectedSingleClick() {
+    fun removeAllSelectedSingleClick(): Unit {
         mutateSelection {
             selectedImages.clear()
             notifyDataSetChanged()
